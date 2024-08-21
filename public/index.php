@@ -37,6 +37,10 @@ $container = $containerBuilder->build();
 // Instantiate the app
 AppFactory::setContainer($container);
 $app = AppFactory::create();
+
+// added to work correctly in local
+$app->setBasePath("/WayPilot/backend");
+
 $callableResolver = $app->getCallableResolver();
 
 // Register middleware
